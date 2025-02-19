@@ -1,5 +1,3 @@
-[toc]
-
 # 主题色的更改
 > 在src/css/quasar.variables.scss文件可配置对应的主题色
 ```scss
@@ -15,3 +13,5 @@ $negative : #ef4864;
 $info : #31CCEC;
 $warning : #F2C037;
 ```
+
+# 多语言配置
