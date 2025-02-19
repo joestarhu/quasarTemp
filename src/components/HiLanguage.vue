@@ -3,7 +3,7 @@
         <q-menu transition-show="jump-down" transition-hide="jump-up">
             <q-list dense>
                 <q-item clickable v-close-popup v-for="obj in options" :key="obj" :active="locale == obj.value"
-                    @click="langChange(obj.value)">
+                    @click="langChange(obj.value)" active-class="text-weight-bolder">
                     <q-item-section>
                         <span>{{ obj.label }}</span>
                     </q-item-section>

@@ -3,7 +3,7 @@
         <q-menu transition-show="jump-down" transition-hide="jump-up">
             <q-list dense>
                 <q-item clickable v-close-popup v-for="obj in options" :key="obj" :active="Dark.mode === obj.value"
-                    @click="appearanceChange(obj)">
+                    @click="appearanceChange(obj)" active-class="text-weight-bolder">
                     <q-item-section avatar>
                         <q-icon :name="obj.icon" />
                     </q-item-section>
