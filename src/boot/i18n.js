@@ -5,7 +5,7 @@ import messages from 'src/i18n'
 
 export default boot(({ app }) => {
   // 默认读取localStorage中的内容
-  let user_locale = localStorage.getItem(ConfigDict.user_locale) || "zh-CN";
+  let user_locale = localStorage.getItem(ConfigDict.locale) || "zh-CN";
 
   const i18n = createI18n({
     locale: user_locale,
