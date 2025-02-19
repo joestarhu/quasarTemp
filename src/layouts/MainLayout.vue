@@ -37,7 +37,6 @@
 <script setup lang="js">
 import { Dark } from 'quasar'
 import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 import HiAppearance from 'components/HiAppearance.vue'
 import HiLanguage from 'components/HiLanguage.vue'
 import HiMenu from 'components/HiMenu.vue'
