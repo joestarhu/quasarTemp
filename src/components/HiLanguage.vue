@@ -19,7 +19,7 @@ import { ConfigDict } from 'src/base/settings'
 
 const { locale } = useI18n({ useScope: "global" })
 const options = [
-    { label: "中文(简体)", value: "zh-CN" },
+    { label: "中文简体", value: "zh-CN" },
     { label: "English", value: "en-US" },
 ]
 
