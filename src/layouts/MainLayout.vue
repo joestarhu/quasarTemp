@@ -1,27 +1,29 @@
 <template>
-  <q-layout view="hHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf">
+    <!-- <q-header elevated> -->
+    <q-header :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'" bordered>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Quasar App
+          Quasar v{{ $q.version }}
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}
+        <div>
           <HiAppearance></HiAppearance>
           <HiLanguage />
         </div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered> -->
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'">
       <q-list>
-        <q-item-label header>
-          自定义组件一览
-        </q-item-label>
-
-        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+        <q-item>
+          <q-item-section side><img src="/icons/favicon-32x32.png"></q-item-section>
+          <q-item-section class="text-h5 text-wight-bold">Quasar App</q-item-section>
+        </q-item>
+        <HiMenu v-for="link in essentialLinks" :key="link.title" v-bind="link"></HiMenu>
       </q-list>
     </q-drawer>
 
@@ -33,14 +35,17 @@
 
 
 <script setup lang="js">
+import { Dark } from 'quasar'
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import HiAppearance from 'components/HiAppearance.vue'
 import HiLanguage from 'components/HiLanguage.vue'
+import HiMenu from 'components/HiMenu.vue'
 
 const essentialLinks = [
   {
     title: 'Docs',
+    i18nlabel: "msgModeAuto",
     caption: 'quasar.dev',
     icon: 'school',
     link: 'https://quasar.dev'
@@ -58,7 +63,7 @@ function toggleLeftDrawer() {
 </script>
 
 <style>
-.dm-bg-light {
+.hi-bg-light {
   background-color: #FFF;
   color: #34373C;
 }
