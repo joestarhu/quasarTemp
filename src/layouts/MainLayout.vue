@@ -36,23 +36,20 @@
 
 <script setup lang="js">
 import { Dark } from 'quasar'
-import { defineComponent, ref } from 'vue'
+import { ref } from 'vue'
 import HiAppearance from 'components/HiAppearance.vue'
 import HiLanguage from 'components/HiLanguage.vue'
 import HiMenu from 'components/HiMenu.vue'
 
 const essentialLinks = [
   {
-    title: 'Docs',
-    i18nlabel: "msgModeAuto",
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  }
+    i18nlabel: "输入框",
+    icon: 'input',
+    to: "/input"
+  },
 ]
 
 const leftDrawerOpen = ref(false)
-
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value

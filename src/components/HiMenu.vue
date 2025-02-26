@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="js">
-let props = defineProps({
+const props = defineProps({
     // 标题
     i18nlabel: { type: String, required: true },
     // 图标
@@ -21,13 +21,13 @@ let props = defineProps({
 })
 </script>
 
-<style>
+<style lang="scss">
 .hi-menu {
     border-radius: 10px 10px 10px 10px;
 }
 
 .hi-menu-active {
-    background-color: #0267ea;
+    background-color:$primary;
     border-radius: 10px;
     color: #FFF;
     font-weight: 800;
