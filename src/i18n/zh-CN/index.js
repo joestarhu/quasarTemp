@@ -3,4 +3,7 @@ export default {
     msgModeAuto: "自动",
     msgModeLight: "浅色",
     msgModeDark: "深色",
+
+    msgNoData: "无数据",
+    msgRequired: "必需",
 }
