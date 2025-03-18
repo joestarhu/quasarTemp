@@ -44,7 +44,6 @@
     :label="i18nLabel?$t(i18nLabel):qProps.label"
     @filter="filterFn" 
     emit-value map-options use-input>
-    </q-select>
         <template #no-option>
             <q-item>
                 <q-item-section class="text-grey">{{ $t("msgNoData") }}</q-item-section>
@@ -58,6 +57,7 @@
                 </q-item-section>
             </q-item>
         </template>
+    </q-select>
 </template>
 
 <script setup lang="js">
