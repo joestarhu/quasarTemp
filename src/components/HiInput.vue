@@ -21,7 +21,8 @@
     v-bind="qProps"
     v-model.trim="innerValue"
     :label="i18nLabel?$t(i18nLabel):qProps.label"
-    emit-value map-options>
+    emit-value map-options
+    >
         <template #no-option>
             <q-item>
                 <q-item-section class="text-grey">{{ $t("msgNoData") }}</q-item-section>
@@ -43,7 +44,8 @@
     v-model.trim="innerValue"
     :label="i18nLabel?$t(i18nLabel):qProps.label"
     @filter="filterFn" 
-    emit-value map-options use-input>
+    emit-value map-options use-input
+    >
         <template #no-option>
             <q-item>
                 <q-item-section class="text-grey">{{ $t("msgNoData") }}</q-item-section>
