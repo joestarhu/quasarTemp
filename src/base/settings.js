@@ -16,8 +16,6 @@ const ConfigDict = {
     HiInputAppendRequired: 0,
     HiInputAppendQuery: 1,
     HiInputStyle: { width: "200px" },
-
-
 }
 
 const HiInputObj = {
@@ -36,6 +34,7 @@ const HiInputObj = {
         let params = { outlined: true, debounce: ConfigDict.debounce, clearable: true, style: ConfigDict.HiInputStyle, dense: true, ...qProps }
         return reactive({ value: value, type: "text", i18nLabel: i18nLabel, i18nPlaceholder: i18nPlaceholder, hiAppend: ConfigDict.HiInputAppendQuery, qProps: params })
     },
+
     // 选择输入
     select: (qProps, i18nLabel = null, value = null) => {
         let params = { outlined: true, "lazy-rules": true, hint: '', dense: true, ...qProps }
@@ -53,21 +52,6 @@ const HiInputObj = {
     },
 }
 
-
-
-
-const HiInputModel = {
-    // 普通输入
-    text: (qProps, i18nLabel = null, value = null, i18nPlaceholder = null) => {
-        let params = { outlined: true, "lazy-rules": true, hint: "", clearable: true, dense: true, ...qProps }
-        return reactive({ value: value, type: "text", i18nLabel: i18nLabel, i18nPlaceholder: i18nPlaceholder, qProps: params })
-    },
-    // 普通选择
-    select: (qProps, i18nLabel = null, value = null) => {
-        let params = { outlined: true, "lazy-rules": true, hint: '', dense: true, ...qProps }
-        return reactive({ value: value, type: "select", i18nLabel: i18nLabel, qProps: params })
-    },
-}
 
 
 export { ConfigDict, HiInputObj }

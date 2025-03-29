@@ -1,14 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- <q-header elevated> -->
-    <q-header :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'" bordered>
+    <q-header :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'" bordeAred>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
-          Quasar v{{ $q.version }}
-        </q-toolbar-title>
-
+        <q-space></q-space>
         <div>
           <HiAppearance></HiAppearance>
           <HiLanguage />
@@ -16,19 +12,24 @@
       </q-toolbar>
     </q-header>
 
-    <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered> -->
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'">
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :class="Dark.isActive ? 'bg-dark' : 'hi-bg-light'" :width="260">
       <q-list>
         <q-item>
-          <q-item-section side><img src="/icons/favicon-32x32.png"></q-item-section>
-          <q-item-section class="text-h5 text-wight-bold">Quasar App</q-item-section>
+          <q-item-section side>
+            <img src="/icons/favicon-32x32.png">
+          </q-item-section>
+          <q-item-section class="text-h6 text-bold">
+              Quasar Demo
+          </q-item-section>
         </q-item>
         <HiMenu v-for="link in essentialLinks" :key="link.title" v-bind="link"></HiMenu>
       </q-list>
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <q-page class="q-pa-md">
+        <router-view />
+      </q-page>
     </q-page-container>
   </q-layout>
 </template>
@@ -47,9 +48,15 @@ const essentialLinks = [
     icon: 'input',
     to: "/input"
   },
+  {
+    i18nlabel: "Demo",
+    icon: 'coffee',
+    to: "/demo"
+  },
 ]
 
 const leftDrawerOpen = ref(false)
+const drawerMiniMode = ref(true)
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
