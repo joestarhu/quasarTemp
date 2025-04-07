@@ -6,4 +6,5 @@ export default {
 
   msgNoData: "No data",
   msgRequired: "Required",
+  msgRecordPerPage:"Record per page",
 }

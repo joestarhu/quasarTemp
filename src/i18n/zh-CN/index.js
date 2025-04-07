@@ -6,4 +6,5 @@ export default {
 
     msgNoData: "无数据",
     msgRequired: "必需",
+    msgRecordPerPage: "每页数量",
 }
